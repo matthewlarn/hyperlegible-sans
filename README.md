@@ -1,6 +1,6 @@
 # Hyperlegible Sans
 
-![Hyperlegible Sans cover image](https://matthewstephens.com/wp-content/uploads/2026/01/Hyperlegible-Sans-Cover-Image-copy-6@2x-scaled.png)
+![Hyperlegible Sans cover image](https://matthewstephens.com/wp-content/uploads/2026/01/Hyperlegible-Sans-Cover-Image_1@2x-scaled.png)
 
 
 **Hyperlegible Sans** is an accessibility-focused, open-source sans serif inspired by the Inter typeface and informed by the principles of hyperlegible design.
