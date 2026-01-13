@@ -1,164 +1,131 @@
-# Inter
+# Hyperlegible Sans
 
-Inter is a typeface carefully crafted & designed for computer screens.
-Inter features a tall x-height to aid in readability of mixed-case and lower-case text.
-Inter is a [variable font](https://rsms.me/inter/#variable) with
-several [OpenType features](https://rsms.me/inter/#features), like contextual alternates that adjusts punctuation depending on the shape of surrounding glyphs, slashed zero for when you need to disambiguate "0" from "o", tabular numbers, etc.
+**Hyperlegible Sans** is an accessibility-focused, open-source sans serif inspired by the Inter typeface and informed by the principles of hyperlegible design.
 
-[**Download Inter font files…**](https://github.com/rsms/inter/releases/latest)
+It preserves the modern, geometric feel of Inter while making targeted changes to improve clarity, disambiguation, and readability, especially for low-vision users and accessibility-first interfaces.
 
-<br>
+This project is a fork of [Inter](https://github.com/rsms/inter) and is distributed under the same SIL Open Font License (OFL 1.1).
 
-[![Sample](misc/readme/intro.png)](https://rsms.me/inter/)
+---
 
+## Why Hyperlegible Sans?
 
-### Quick questions
+Inter is one of the best and most widely used open-source UI fonts available. Its clean geometry, strong engineering, and broad adoption make it a default choice for modern design systems.
 
-- **Where can I get Inter?** [Here](https://github.com/rsms/inter/releases/latest)
-- **I think I found a bug. How can I let you know?** [Open an issue here](https://github.com/rsms/inter/issues/new?template=bug_report.md)
-- **I have a question. Where can I get help?** [Post in Discussions Q&A](https://github.com/rsms/inter/discussions/categories/q-a)
-- **Should I use Inter from Google Fonts?** No, unless you have no other choice.
-  (outdated, no italics)
-- **Can I legally use Inter for my purpose?** Most likely _yes!_ Inter is free and open source.
-  ([Read the license](LICENSE.txt) for details.)
+However, when working on accessibility-focused products, especially interfaces designed for users with low vision or motor and neurological conditions, certain limitations became more noticeable:
 
+- Ambiguous glyphs at small sizes
+- Tight apertures that close under blur or low contrast
+- Characters like `I`, `l`, and `1` that are difficult to distinguish
+- Kerning pairs that visually collapse in dense UI text
 
-## Using & installing Inter
+At the same time, accessibility-first fonts like Atkinson Hyperlegible offer excellent clarity and disambiguation, but often lack the contemporary visual tone many designers expect from modern UI typography.
 
-[**Download the latest font files…**](https://github.com/rsms/inter/releases/latest)
+Hyperlegible Sans exists to bridge that gap.
 
-Using Inter on a web page:
+---
 
-```html
-<link rel="preconnect" href="https://your-font-file-host/">
-<link rel="stylesheet" href="https://your-font-file-host/inter.css">
-```
+## Design goals
 
-```css
-:root { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  :root { font-family: 'Inter var', sans-serif; }
-}
-```
+- Maintain the visual identity and modern feel of Inter
+- Reduce ambiguity in commonly confused glyphs
+- Improve readability at small sizes and under low-vision conditions
+- Favor openness, clarity, and generous spacing over tight density
+- Make accessibility improvements without making the font feel “special” or clinical
 
-For web pages, there's an official [CDN distribution](https://rsms.me/inter/inter.css) that you can use directly without having to host the font files yourself:
+The goal is not to replace Inter or Atkinson Hyperlegible, but to offer another option that combines the strengths of both.
 
-```html
-<link rel="preconnect" href="https://rsms.me/">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-```
+---
 
+## What’s changed
 
-### Alternate distributions
+Hyperlegible Sans makes a small number of deliberate, high-impact modifications to Inter:
 
-- [NPM `inter-ui`](https://www.npmjs.com/package/inter-ui)
-- [Homebrew `font-inter`](https://github.com/Homebrew/homebrew-cask-fonts)
-- [Ubuntu `fonts-inter`](https://packages.ubuntu.com/search?keywords=fonts-inter)
-- [List of Inter available on various Linux distributions…](https://repology.org/project/fonts:inter/versions)
-- [Google Fonts](https://fonts.google.com/specimen/Inter)
+### Glyph improvements
+- **Capital I**: Added subtle top and bottom bars to clearly distinguish it from `l` and `1`
+- **Lowercase l**: Added a small baseline spur for improved disambiguation
+- **Zero (0)**: Uses a slashed zero to avoid confusion with capital O
+- **Capital O**: Slightly widened to further differentiate it from zero
+- **a and e**: Opened apertures to improve readability at small sizes and under blur
 
-**Disclaimer:** Alternate distributions may not always be up-to-date.
+### Spacing and kerning
+While Inter’s spacing and kerning are excellent for general-purpose design, Hyperlegible Sans introduces additional spacing for accessibility-critical pairs that commonly collapse:
 
+- `rn`, `ri`, `rl`
+- `fi`, `fl`, `ft`, `tt`
+- `ii`, `ll`, `il`, `li`
+- `la`
 
-## Notable uses of Inter
+These changes are intentionally conservative and designed to improve clarity without disrupting overall rhythm.
 
-- [ElementaryOS](https://elementary.io/)
-- [Figma](https://figma.com/)
-- [GitLab](https://gitlab.com/)
-- [Guggenheim museums](https://www.pentagram.com/work/guggenheim-3) ([case study](https://www.pentagram.com/work/guggenheim-3/))
-- [ISO (International Organization for Standardization)](https://www.iso.org/) ([case study](https://www.motherbird.com.au/projects/iso/))
-- [Minimalissimo magazine](https://minimalissimo.com/)
-- [Mozilla](https://mozilla.design/firefox/typography/)
-- [NASA](https://www.nasa.gov/specials/artemis-ii/)
-- [Pixar Presto](https://en.wikipedia.org/wiki/Presto_(animation_software))
-- [Switzerland, Canton of Zurich](https://www.zh.ch/)
-- [Unity](https://unity.com/)
-- [Zurich Airport](https://flughafen-zuerich.ch/)
+---
 
+## Current status
 
-> **Have you made something nice with Inter?**<br>
-> [Please share in Show & Tell! →](https://github.com/rsms/inter/discussions/categories/show-and-tell)
+**Version 1** includes:
+- Regular
+- Medium
+- Bold
 
+Roman (upright) styles only.
 
-### Notable forks
+---
 
-- [Open Runde](https://github.com/lauridskern/open-runde) is a rounded variant of Inter
-- [Interalia](https://github.com/Shavian-info/interalia) extends Inter with Shavian characters
-- [Raveo](https://github.com/jakubfoglar/raveo) is a "warmer version" of Inter
+## Roadmap
 
+Planned future work includes:
 
-## Supporters & contributors
+- Additional weights
+- Italics
+- A full variable font
+- Expanded punctuation
+- Improved numerals and tabular figures
+- Broader language support
+- Refinements for dark mode and low-contrast environments
 
-A wholehearted **Thank You** to everyone who supports the Inter project!
+This project is evolving and feedback is welcome.
 
-Special thanks to
-[@thundernixon](https://github.com/thundernixon) and
-[@KatjaSchimmel](https://github.com/KatjaSchimmel)
-who have put in significant effort into making Inter what it is through
-their contributions ♡
+---
 
-See [graphs/contributors](https://github.com/rsms/inter/graphs/contributors)
-for a complete list of all contributors.
+## License
 
+Hyperlegible Sans is licensed under the **SIL Open Font License, Version 1.1**.
 
-## Contributing to this project
+- You are free to use, study, modify, and redistribute the font
+- The font may be bundled with software or products
+- The font itself may not be sold on its own
+- The name “Inter” is a Reserved Font Name and is not used as the primary font name
 
-For instructions on how to work with the source files and how to
-[compile & build font files](CONTRIBUTING.md#compiling-font-files),
-refer to [**CONTRIBUTING.md**](CONTRIBUTING.md).
+See `LICENSE.txt` for full details.
 
-Inter is licensed under the [SIL Open Font License](LICENSE.txt)
+---
 
+## Attribution
 
-## Creating derivative fonts
+Hyperlegible Sans is derived from **Inter**, designed by Rasmus Andersson and contributors.
 
-Inter is open source which means you can make your own versions with your own changes.
-However when doing so, please [**read LICENSE.txt carefully.**](LICENSE.txt) It is a standard **SIL Open Font License 1.1**:
+Inter is © The Inter Project Authors  
+https://github.com/rsms/inter
 
-> The goals of the Open Font License (OFL) are to stimulate worldwide
-> development of collaborative font projects, to support the font creation
-> efforts of academic and linguistic communities, and to provide a free and
-> open framework in which fonts may be shared and improved in partnership
-> with others.
->
-> The OFL allows the licensed fonts to be used, studied, modified and
-> redistributed freely as long as they are not sold by themselves. The
-> fonts, including any derivative works, can be bundled, embedded,
-> redistributed and/or sold with any software provided that any reserved
-> names are not used by derivative works. The fonts and derivatives,
-> however, cannot be released under any other type of license. The
-> requirement for fonts to remain under this license does not apply
-> to any document created using the fonts or their derivatives.
+This project is not affiliated with or endorsed by the original Inter project.
 
-While you are allowed to use Inter commercially, i.e. bundled with product or service which makes you money, you are NOT allowed to sell Inter itself or derivatives of Inter. If you would like to do so, please [reach out](https://github.com/rsms) and we can talk about it.
+---
 
-Inter a trademark of Rasmus Andersson (DBA: RSMS)
+## Contributing
 
-"Inter" is a Reserved Font Name by Rasmus Andersson
-([font vendor code RSMS.](https://learn.microsoft.com/en-us/typography/vendors/#r))
+Contributions, issues, and discussion are welcome.
 
+If you’d like to contribute:
+- Open an issue to discuss changes or bugs
+- Submit a pull request with clear explanations
+- Keep accessibility and readability as the primary design criteria
 
-## Design
+---
 
-_This section discusses some of the design choices made for Inter._
+## Contact
 
-Inter can be classified as a geometric neo-grotesque, similar in style to Roboto, Apple San Francisco, Akkurat, Asap, Lucida Grande and more. Some trade-offs were made in order to make this typeface work really well at small sizes:
+If you’re using Hyperlegible Sans in a project or have feedback, feel free to open an issue or share your work.
 
-- Early versions of Inter was not suitable for very large sizes because of some small-scale glyph optimizations (like "pits" and "traps") that help rasterization at small sizes but stand out and interfere at large sizes. However today Inter works well at large sizes and a [Display subfamily](https://github.com/rsms/inter/releases/tag/display-beta-1) is in the works for really large "display" sizes.
+---
 
-- Rasterized at sizes below 12px, some stems—like the horizontal center of "E", "F", or vertical center of "m"—are drawn with two semi-opaque pixels instead of one solid. This is because we "prioritize" (optimize for) higher-density rasterizations. If we move these stems to an off-center position—so that they can be drawn sharply at e.g. 11px—text will be less legible at higher resolutions.
-
-Inter is a [variable font](https://rsms.me/inter/#variable) and is in addition also distributed as a set of traditional distinct font files in the following styles:
-
-| Roman (upright) name | Italic name          | Weight
-| -------------------- | -------------------- | ------------
-| Thin                 | Thin Italic          | 100
-| Extra Light          | Extra Light Italic   | 200
-| Light                | Light Italic         | 300
-| Regular              | Italic               | 400
-| Medium               | Medium Italic        | 500
-| Semi Bold            | Semi Bold Italic     | 600
-| Bold                 | Bold Italic          | 700
-| Extra Bold           | Extra Bold Italic    | 800
-| Black                | Black Italic         | 900
-
+*Not less beautiful. Not more clinical. Just clearer, easier, more humane.*
