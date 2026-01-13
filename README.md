@@ -6,6 +6,8 @@
 
 It preserves the modern, geometric feel of Inter while making targeted changes to improve clarity, disambiguation, and readability, especially for low-vision users and accessibility-first interfaces.
 
+**[⬇ Download Latest Fonts](https://github.com/matthewlarn/hyperlegible-sans/releases/latest)**
+
 This project is a fork of [Inter](https://github.com/rsms/inter) and is distributed under the same SIL Open Font License (OFL 1.1).
 
 ---
