@@ -1,9 +1,0 @@
-# Note: don't use cvParameters here since this file is included in salt
-sub six by six.ss01;
-sub six.tf by six.tf.ss01;
-sub six.squared by six.ss01.squared;
-sub six.circled by six.ss01.circled;
-sub six.dnom by six.dnom.ss01;
-sub six.numr by six.numr.ss01;
-sub six.sups by six.sups.ss01;
-sub six.subs by six.subs.ss01;

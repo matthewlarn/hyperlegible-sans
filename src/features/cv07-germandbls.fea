@@ -1,3 +1,0 @@
-# Note: don't use cvParameters here since this file is included in salt
-
-sub germandbls by germandbls.1;
