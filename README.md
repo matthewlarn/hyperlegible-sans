@@ -136,5 +136,5 @@ If you’re using Hyperlegible Sans in a project or have feedback, feel free to 
 
 ---
 
-![Hyperlegible Sans preview text]([https://matthewstephens.com/wp-content/uploads/2026/01/3-Hyperlegible-Sans-Text-Preview-2-scaled.png](https://matthewstephens.com/wp-content/uploads/2026/01/3-Hyperlegible-Sans-Text-Preview-3-scaled.png))
+![Hyperlegible Sans preview text](https://matthewstephens.com/wp-content/uploads/2026/01/3-Hyperlegible-Sans-Text-Preview-3-scaled.png)
 *Preview of the font and the reason why I made it.*
