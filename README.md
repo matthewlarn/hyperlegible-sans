@@ -46,7 +46,7 @@ The goal is not to replace Inter or Atkinson Hyperlegible, but to offer another 
 Hyperlegible Sans makes a small number of deliberate, high-impact modifications to Inter:
 
 ### Glyph improvements
-![Hyperlegible Sans compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/2-Hyperlegible-Sans-Comparison-3-scaled.png)
+![Hyperlegible Sans compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/2-Hyperlegible-Sans-Comparison-4-scaled.png)
 - **Capital I**: Added subtle top and bottom bars to clearly distinguish it from `l` and `1`
 - **Lowercase l**: Added a small baseline spur for improved disambiguation
 - **Zero (0)**: Uses a slashed zero to avoid confusion with capital O
