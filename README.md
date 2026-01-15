@@ -1,6 +1,6 @@
 # Hyperlegible Sans
 
-![Hyperlegible Sans cover image](https://matthewstephens.com/wp-content/uploads/2026/01/1-Hyperlegible-Sans-Cover-Image-2-scaled.png)
+![Hyperlegible Sans cover image](https://matthewstephens.com/wp-content/uploads/2026/01/1-Hyperlegible-Sans-Cover-Image-3-scaled.png)
 
 **Hyperlegible Sans** is an accessibility-focused, open-source sans serif inspired by the Inter typeface and informed by the principles of hyperlegible design.
 
@@ -46,10 +46,11 @@ The goal is not to replace Inter or Atkinson Hyperlegible, but to offer another 
 Hyperlegible Sans makes a small number of deliberate, high-impact modifications to Inter:
 
 ### Glyph improvements
-![Hyperlegible Sans compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/2-Hyperlegible-Sans-Comparison-2-scaled.png)
+![Hyperlegible Sans compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/2-Hyperlegible-Sans-Comparison-3-scaled.png)
 - **Capital I**: Added subtle top and bottom bars to clearly distinguish it from `l` and `1`
 - **Lowercase l**: Added a small baseline spur for improved disambiguation
 - **Zero (0)**: Uses a slashed zero to avoid confusion with capital O
+- **8**: Reduced the size and symmetry of the bowls to prevent the character from collapsing into a solid shape at small sizes and under blur.
 - **Capital O**: Slightly widened to further differentiate it from zero
 - **a and e**: Opened apertures to improve readability at small sizes and under blur
 
@@ -61,7 +62,7 @@ While Inter’s spacing and kerning are excellent for general-purpose design, Hy
 - `ii`, `ll`, `il`, `li`
 - `la`
 
-![Hyperlegible Sans kerning compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/4-Hyperlegible-Sans-Kerning-scaled.png)
+![Hyperlegible Sans kerning compared to Inter](https://matthewstephens.com/wp-content/uploads/2026/01/3-Hyperlegible-Sans-Kerning-scaled.png)
 
 
 These changes are intentionally conservative and designed to improve clarity without disrupting overall rhythm.
@@ -136,5 +137,5 @@ If you’re using Hyperlegible Sans in a project or have feedback, feel free to 
 
 ---
 
-![Hyperlegible Sans preview text](https://matthewstephens.com/wp-content/uploads/2026/01/3-Hyperlegible-Sans-Text-Preview-3-scaled.png)
+![Hyperlegible Sans preview text](https://matthewstephens.com/wp-content/uploads/2026/01/4-Hyperlegible-Sans-Text-Preview-scaled.png)
 *Preview of the font and the reason why I made it.*
