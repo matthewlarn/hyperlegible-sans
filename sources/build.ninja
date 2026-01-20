@@ -1,0 +1,323 @@
+# instantiateUfo: Create instance UFOs from a Glyphs or designspace file
+rule instantiateUfo
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner fontmake -i "$instance_name" -o ufo $
+      $fontmake_type $in $args $stamp
+  description = instantiateUfo
+
+# buildTTF: Build a TTF from a source file
+rule buildTTF
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner fontmake --output-path $out -o ttf $
+      $fontmake_type $in $args $stamp
+  description = buildTTF
+
+# autohint: Run gftools-autohint
+rule autohint
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner gftools-autohint $args -o $out $in $stamp
+  description = autohint
+
+# fix: Run gftools-fix
+rule fix
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner gftools-fix-font -o $out $args $in $stamp
+  description = fix
+
+# compress: Compress to webfont
+rule compress
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner fonttools ttLib.woff2 compress -o $out $
+      $in $stamp
+  description = compress
+
+# buildOTF: Build a OTF from a source file
+rule buildOTF
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner fontmake --output-path $out -o otf $
+      $fontmake_type $in $args $stamp
+  description = buildOTF
+
+# copy: Copy a file
+rule copy
+  command = $
+      /Users/matthewstephens/Documents/GitHub/hyperlegible-sans/venv/bin/python3.11 $
+      -m gftools.builder.jobrunner cp $in $out $stamp
+  description = copy
+
+# Generating instance_ufos/HyperlegibleSans-Regular.ufo.json
+build instance_ufos/HyperlegibleSans-Regular.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-Regular.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Regular
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/HyperlegibleSans-Italic.ufo.json
+build instance_ufos/HyperlegibleSans-Italic.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/HyperlegibleSans-Medium.ufo.json
+build instance_ufos/HyperlegibleSans-Medium.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-Medium.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Medium
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/HyperlegibleSans-MediumItalic.ufo.json
+build instance_ufos/HyperlegibleSans-MediumItalic.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-MediumItalic.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Medium Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/HyperlegibleSans-Bold.ufo.json
+build instance_ufos/HyperlegibleSans-Bold.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-Bold.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Bold
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/HyperlegibleSans-BoldItalic.ufo.json
+build instance_ufos/HyperlegibleSans-BoldItalic.ufo.json: instantiateUfo $
+    Hyperlegible-Sans-BoldItalic.glyphs
+  operation = instantiateUfo
+  instance_name = Hyperlegible Sans Bold Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating ../fonts/webfonts/HyperlegibleSans-Regular.woff2
+build ../fonts/webfonts/HyperlegibleSans-Regular.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-Regular.ttf
+  operation = compress
+# Generating ../fonts/webfonts/HyperlegibleSans-Italic.woff2
+build ../fonts/webfonts/HyperlegibleSans-Italic.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-Italic.ttf
+  operation = compress
+# Generating ../fonts/webfonts/HyperlegibleSans-Medium.woff2
+build ../fonts/webfonts/HyperlegibleSans-Medium.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-Medium.ttf
+  operation = compress
+# Generating ../fonts/webfonts/HyperlegibleSans-MediumItalic.woff2
+build ../fonts/webfonts/HyperlegibleSans-MediumItalic.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-MediumItalic.ttf
+  operation = compress
+# Generating ../fonts/webfonts/HyperlegibleSans-Bold.woff2
+build ../fonts/webfonts/HyperlegibleSans-Bold.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-Bold.ttf
+  operation = compress
+# Generating ../fonts/webfonts/HyperlegibleSans-BoldItalic.woff2
+build ../fonts/webfonts/HyperlegibleSans-BoldItalic.woff2: compress $
+    ../fonts/ttf/HyperlegibleSans-BoldItalic.ttf
+  operation = compress
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9pyb217r
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9pyb217r: $
+    buildTTF instance_ufos/HyperlegibleSans-Regular.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpe_bhi_xh
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpe_bhi_xh: $
+    buildOTF instance_ufos/HyperlegibleSans-Regular.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpfa53_1qe
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpfa53_1qe: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9pyb217r
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-Regular.ttf
+build ../fonts/ttf/HyperlegibleSans-Regular.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpfa53_1qe
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-Regular.otf
+build ../fonts/otf/HyperlegibleSans-Regular.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpe_bhi_xh
+  operation = fix
+  args = 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmptygb9add
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmptygb9add: $
+    buildTTF instance_ufos/HyperlegibleSans-Italic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpvwyaz60i
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpvwyaz60i: $
+    buildOTF instance_ufos/HyperlegibleSans-Italic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpmza_k6to
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpmza_k6to: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmptygb9add
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-Italic.ttf
+build ../fonts/ttf/HyperlegibleSans-Italic.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpmza_k6to
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-Italic.otf
+build ../fonts/otf/HyperlegibleSans-Italic.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpvwyaz60i
+  operation = fix
+  args = 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpu6fe2xo9
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpu6fe2xo9: $
+    buildTTF instance_ufos/HyperlegibleSans-Medium.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphnp_gaus
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphnp_gaus: $
+    buildOTF instance_ufos/HyperlegibleSans-Medium.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpzvkixehl
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpzvkixehl: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpu6fe2xo9
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-Medium.ttf
+build ../fonts/ttf/HyperlegibleSans-Medium.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpzvkixehl
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-Medium.otf
+build ../fonts/otf/HyperlegibleSans-Medium.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphnp_gaus
+  operation = fix
+  args = 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpsghamh6m
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpsghamh6m: $
+    buildTTF instance_ufos/HyperlegibleSans-MediumItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp0_0exeok
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp0_0exeok: $
+    buildOTF instance_ufos/HyperlegibleSans-MediumItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpk4jccwlo
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpk4jccwlo: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpsghamh6m
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-MediumItalic.ttf
+build ../fonts/ttf/HyperlegibleSans-MediumItalic.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpk4jccwlo
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-MediumItalic.otf
+build ../fonts/otf/HyperlegibleSans-MediumItalic.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp0_0exeok
+  operation = fix
+  args = 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphdlu_nuj
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphdlu_nuj: $
+    buildTTF instance_ufos/HyperlegibleSans-Bold.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp7rqg4ouy
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp7rqg4ouy: $
+    buildOTF instance_ufos/HyperlegibleSans-Bold.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpb6amika_
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpb6amika_: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmphdlu_nuj
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-Bold.ttf
+build ../fonts/ttf/HyperlegibleSans-Bold.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpb6amika_
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-Bold.otf
+build ../fonts/otf/HyperlegibleSans-Bold.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp7rqg4ouy
+  operation = fix
+  args = 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9w1mcj95
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9w1mcj95: $
+    buildTTF instance_ufos/HyperlegibleSans-BoldItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpqjtclmpv
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpqjtclmpv: $
+    buildOTF instance_ufos/HyperlegibleSans-BoldItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpq60plvao
+build /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpq60plvao: $
+    autohint /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmp9w1mcj95
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/ttf/HyperlegibleSans-BoldItalic.ttf
+build ../fonts/ttf/HyperlegibleSans-BoldItalic.ttf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpq60plvao
+  operation = fix
+  args = 
+# Generating ../fonts/otf/HyperlegibleSans-BoldItalic.otf
+build ../fonts/otf/HyperlegibleSans-BoldItalic.otf: fix $
+    /var/folders/_q/n3t7k2ys2tl_mwrd5srwdbcc0000gn/T/tmpqjtclmpv
+  operation = fix
+  args = 
+default ../fonts/webfonts/HyperlegibleSans-Regular.woff2 $
+    ../fonts/webfonts/HyperlegibleSans-Italic.woff2 $
+    ../fonts/webfonts/HyperlegibleSans-Medium.woff2 $
+    ../fonts/webfonts/HyperlegibleSans-MediumItalic.woff2 $
+    ../fonts/webfonts/HyperlegibleSans-Bold.woff2 $
+    ../fonts/webfonts/HyperlegibleSans-BoldItalic.woff2 $
+    ../fonts/otf/HyperlegibleSans-Regular.otf $
+    ../fonts/otf/HyperlegibleSans-Italic.otf $
+    ../fonts/otf/HyperlegibleSans-Medium.otf $
+    ../fonts/otf/HyperlegibleSans-MediumItalic.otf $
+    ../fonts/otf/HyperlegibleSans-Bold.otf $
+    ../fonts/otf/HyperlegibleSans-BoldItalic.otf
